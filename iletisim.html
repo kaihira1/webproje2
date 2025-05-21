@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>İletişim</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="validation.js" defer></script>
+  <link rel="stylesheet" href="iletisimstyle.css">
+  
+</head>
+<body>
+  <div id="app" class="container">
+    <h2>İletişim Formu</h2>
+    <form @submit.prevent="vueKontrol">
+      <label>Ad Soyad:</label>
+      <input type="text" id="adsoyad" v-model="adsoyad"><br>
+
+      <label>Email:</label>
+      <input type="text"id="email" v-model="email"><br>
+
+      <label>Telefon:</label>
+      <input type="text" id="telefon" v-model="telefon"><br>
+
+      <label>Mesaj:</label>
+      <textarea id="mesaj" v-model="mesaj"></textarea><br>
+
+      <button type="submit">Vue.js ile Gönder</button>
+      <button type="button" onclick="jsKontrol()">JS ile Gönder</button>
+      <button type="reset">Temizle</button>
+    </form>
+
+    <div v-if="hata" style="color:red">{{ hata }}</div>
+  </div>
+</body>
+</html>
+
+
+<
