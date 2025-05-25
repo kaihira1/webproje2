@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Sonucu</title>
+</head>
+<body>
+  <h2>Gönderilen Bilgiler</h2>
+  <ul id="bilgiler"></ul>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const ul = document.getElementById("bilgiler");
+
+    for (const [key, value] of params.entries()) {
+      const li = document.createElement("li");
+      li.textContent = `${key}: ${value}`;
+      ul.appendChild(li);
+    }
+  </script>
+</body>
+</html>
